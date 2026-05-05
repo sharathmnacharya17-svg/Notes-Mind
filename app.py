@@ -310,7 +310,7 @@ if "uploaded_docs" not in st.session_state:
 if "api_key_set" not in st.session_state:
     st.session_state.api_key_set = False
 
-api_key = os.getenv("COHERE_API_KEY", "").strip()
+api_key = st.secrets("COHERE_API_KEY", "").strip()
 st.session_state.api_key_set = bool(api_key)
 
 
